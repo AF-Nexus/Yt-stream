@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: yt-live-counter
+    runtime: docker
+    plan: free
+    healthCheckPath: /health
+    envVars:
+      - key: YT_STREAM_KEY
+        sync: false
+      - key: YT_API_KEY
+        sync: false
+      - key: CHANNEL_HANDLE
+        sync: false
+      - key: STREAM_WIDTH
+        value: "640"
+      - key: STREAM_FPS
+        value: "10"
+      - key: VIDEO_KBPS
+        value: "450"
